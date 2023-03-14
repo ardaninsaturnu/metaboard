@@ -7,11 +7,13 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import DrawerElement from "./Elements/Drawer";
+import {useSelector} from "react-redux";
 
 const drawerWidth = 140;
 
 const MobileAppBar = (props) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const selectedPage = useSelector( state => state.selectedPage )
   const { window } = props;
   
   const handleDrawerToggle = () => {
@@ -41,7 +43,7 @@ const MobileAppBar = (props) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="div">
-          Responsive drawer
+          { selectedPage }
         </Typography>
       </Toolbar>
     </AppBar>

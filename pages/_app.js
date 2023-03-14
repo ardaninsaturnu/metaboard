@@ -7,6 +7,8 @@ import { CacheProvider } from '@emotion/react';
 import theme from '../src/theme';
 import createEmotionCache from '../src/createEmotionCache';
 import '../styles/globals.css';
+import {Provider} from "react-redux";
+import store from "../store";
 
 // Client-side cache shared for the whole session
 // of the user in the browser.
@@ -14,24 +16,25 @@ import '../styles/globals.css';
 const clientSideEmotionCache = createEmotionCache();
 
 export default function MyApp(props) {
-  const { Component, emotionCache =
-    clientSideEmotionCache, pageProps } = props;
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   
   return (
-    <CacheProvider value={emotionCache}>
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
-      <ThemeProvider theme={theme}>
-        
-        {/* CssBaseline kickstart an elegant,
-				consistent, and simple baseline to
-				build upon. */}
-        
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </CacheProvider>
+    <Provider store={store}>
+      <CacheProvider value={emotionCache}>
+        <Head>
+          <meta name="viewport" content="initial-scale=1, width=device-width" />
+        </Head>
+        <ThemeProvider theme={theme}>
+          
+          {/* CssBaseline kickstart an elegant,
+          consistent, and simple baseline to
+          build upon. */}
+          
+          <CssBaseline />
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </CacheProvider>
+    </Provider>
   );
 }
 

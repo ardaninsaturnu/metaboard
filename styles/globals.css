@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+    border: none !important;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    width: 16px;
+    height: 16px;
+}

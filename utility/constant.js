@@ -7,47 +7,52 @@ import {
   WatchLater
 } from "@mui/icons-material";
 
-export const sidebarLinks = [
+const iconStyles = (slug, state) => `${ slug === state ? 'text-[#cfe8ff]' : 'text-orange' } w-[4px]`
+
+export const sidebarLinks = (state) => {
+  return [
   {
     to: '/portfolio',
     link: 'Portfolio',
     slug: 'portfolio',
-    icon: <Dashboard className="text-[#cfe8ff] w-[4px]"/>
+    icon: <Dashboard className={iconStyles( 'portfolio', state )}/>
   },
   {
     to: '/buy',
     link: 'Buy',
-    icon: <PaymentSharp className="text-[#cfe8ff]"/>
+    slug: 'buy',
+    icon: <PaymentSharp className={iconStyles( 'buy', state )}/>
   },
   {
     to: '/swap',
     link: 'Swap',
     slug: 'swap',
-    icon: <SwapHoriz className="text-[#cfe8ff]"/>
+    icon: <SwapHoriz className={iconStyles( 'swap', state )}/>
   },
   {
     to: '/bridge',
     link: 'Bridge',
     slug: 'bridge',
-    icon: <KeyboardArrowUpOutlined className="text-[#cfe8ff]"/>
+    icon: <KeyboardArrowUpOutlined className={iconStyles( 'bridge', state )}/>
   },
   {
     to: '/stake',
     link: 'Stake',
     slug: 'stake',
-    icon: <StreetviewTwoTone className="text-[#cfe8ff]"/>
+    icon: <StreetviewTwoTone className={iconStyles( 'stake', state )}/>
   },
   {
     to: '/watchlist',
     link: 'Watchlist',
     slug: 'watchlist',
-    icon: <WatchLater className="text-[#cfe8ff]"/>
+    icon: <WatchLater className={iconStyles( 'watchlist', state )}/>
   },
   {
     to: '/settings',
     link: 'Settings',
     slug: 'settings',
-    icon: <Settings className="text-[#cfe8ff]"/>
+    icon: <Settings className={iconStyles( 'settings', state )}/>
   }
 ]
+}
 

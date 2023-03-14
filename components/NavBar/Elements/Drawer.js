@@ -16,7 +16,7 @@ const DrawerElement = () => {
       < Toolbar/>
         < List >
           {
-            sidebarLinks.map(({to, link, slug, icon}, index) => (
+            sidebarLinks(selectedItem).map(({to, link, slug, icon}, index) => (
                 <ListItem
                   key={index}
                   disablePadding

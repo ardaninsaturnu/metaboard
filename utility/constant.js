@@ -40,11 +40,13 @@ export const sidebarLinks = [
   {
     to: '/watchlist',
     link: 'Watchlist',
+    slug: 'watchlist',
     icon: <WatchLater className="text-[#cfe8ff]"/>
   },
   {
     to: '/settings',
     link: 'Settings',
+    slug: 'settings',
     icon: <Settings className="text-[#cfe8ff]"/>
   }
 ]

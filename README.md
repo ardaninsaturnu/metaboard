@@ -32,20 +32,20 @@ for client
 Clone project your local
 
 ```sh
-git clone git@github.com:ardaninsaturnu/booquery.git
+git clone git@github.com:ardaninsaturnu/metaboard.git
 ```
 
 Install the dependencies and devDependencies and start the npm.
 
 ```sh
 npm install
-npm start
+npm run dev
 ```
 
 ## View
 
 to view project last version click this
-url : <a target="_blank" href="https://booquery.vercel.app">for Antiquery follow this</a>
+url : <a target="_blank" href="">for Metaboard follow this</a>
 
 ### Commits Explanation
 

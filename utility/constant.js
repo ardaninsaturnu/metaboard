@@ -6,6 +6,8 @@ import {
   SwapHoriz,
   WatchLater
 } from "@mui/icons-material";
+import Image from "next/image";
+import usa from "../src/images/usa.png";
 
 const iconStyles = (slug, state) => `${ slug === state ? 'text-[#cfe8ff]' : 'text-orange' } w-[4px]`
 
@@ -55,4 +57,40 @@ export const sidebarLinks = (state) => {
   }
 ]
 }
+
+export const selectCountry = [
+  {
+    value: 1,
+    text: 'USA',
+    icon: <Image src={usa} alt="flag usa" style={{width:24}}/>
+  },
+  {
+    value: 2,
+    text: 'GB',
+    icon: <Image src={usa} alt="flag usa" style={{width:24}}/>
+  },
+  {
+    value: 3,
+    text: 'TUR',
+    icon: <Image src={usa} alt="flag usa" style={{width:24}}/>
+  }
+]
+
+export const selectBalance = [
+  {
+    value: 1,
+    text: 'USA',
+    icon: <Image src={usa} alt="flag usa" style={{width:24}}/>
+  },
+  {
+    value: 2,
+    text: 'GB',
+    icon: <Image src={usa} alt="flag usa" style={{width:24}}/>
+  },
+  {
+    value: 3,
+    text: 'TUR',
+    icon: <Image src={usa} alt="flag usa" style={{width:24}}/>
+  }
+]
 

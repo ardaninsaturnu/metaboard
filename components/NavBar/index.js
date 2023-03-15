@@ -8,6 +8,8 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import DrawerElement from "./Elements/Drawer";
 import {useSelector} from "react-redux";
+import SelectButton from "./Elements/SelectButton";
+import {selectCountry} from "../../utility/constant";
 
 const drawerWidth = 140;
 
@@ -26,25 +28,27 @@ const MobileAppBar = (props) => {
     <>
     <AppBar
       position="fixed"
-    
       sx={{
         width: { sm: `calc(100% - ${drawerWidth}px)` },
         ml: { sm: `${drawerWidth}px` },
       }}
     >
-      <Toolbar className="bg-gray-900">
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          edge="start"
-          onClick={handleDrawerToggle}
-          sx={{ mr: 2, display: { sm: 'none' } }}
-        >
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" noWrap component="div">
-          { selectedPage }
-        </Typography>
+      <Toolbar className="bg-gray-900 flex justify-between">
+       <div>
+         <IconButton
+           color="inherit"
+           aria-label="open drawer"
+           edge="start"
+           onClick={handleDrawerToggle}
+           sx={{ mr: 2, display: { sm: 'none' } }}
+         >
+           <MenuIcon />
+         </IconButton>
+         <Typography variant="h6" noWrap component="div">
+           { selectedPage }
+         </Typography>
+       </div>
+        <SelectButton data={selectCountry} name="country" label="Select Country" />
       </Toolbar>
     </AppBar>
       <Box

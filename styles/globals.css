@@ -18,3 +18,8 @@
 .css-1ws8119-MuiDivider-root::before, .css-1ws8119-MuiDivider-root::after {
     border-top: thin solid rgb(3 105 161 / 52%);
 }
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{
+    display: flex;
+    align-items: center;
+}

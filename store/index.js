@@ -2,7 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 
 const initialState = {
   selectedItem: "portfolio",
-  selectedPage: "Portfolio"
+  selectedPage: "Portfolio",
+  mobileOpen: false
 }
 
 const rootReducer = ( state = initialState, action ) => {
@@ -12,9 +13,12 @@ const rootReducer = ( state = initialState, action ) => {
         ...state,
         selectedItem: action.payload.item,
         selectedPage: action.payload.page
-        
       };
-      
+    case "TOGGLE_MOBILE":
+      return {
+        ...state,
+        mobileOpen: !state.mobileOpen
+      };
     default:
       return state;
   }

@@ -3,13 +3,13 @@ import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import MobileAppBar from "./NavBar";
 
-function ResponsiveDrawer() {
+function Dashboard({children}) {
   return (
     <Box sx={{ display: 'flex' }} className="border-gray-800">
-      <CssBaseline />
       <MobileAppBar/>
+      { children }
     </Box>
   );
 }
 
-export default ResponsiveDrawer;
+export default Dashboard;

@@ -28,7 +28,6 @@ const DrawerElement = () => {
                     }
                   } )}
                   className={ selectedItem === slug ? 'border-r border-r-blue-300 border-r-8' : '' }>
-                  {/* TODO: border will fixed. */}
                   <Link href={'#'} className="flex items-center p-3">
                     <ListItemIcon className="min-w-[28px]">
                       {icon}

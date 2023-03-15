@@ -10,3 +10,11 @@
     width: 16px;
     height: 16px;
 }
+.css-1mcbp3n {
+    width: 0 !important;
+    padding: 0!important;
+}
+
+.css-1ws8119-MuiDivider-root::before, .css-1ws8119-MuiDivider-root::after {
+    border-top: thin solid rgb(3 105 161 / 52%);
+}

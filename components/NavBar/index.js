@@ -1,8 +1,7 @@
-import {useState} from "react";
 import AppBar from "@mui/material/AppBar";
 import TopBar from "./Elements/TopBar";
 import SideBar from "./Elements/SideBar";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 
 const drawerWidth = 140;
 

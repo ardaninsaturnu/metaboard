@@ -2,13 +2,15 @@ import {Button, Divider} from "@mui/material";
 import Image from "next/image";
 import metamask from "../../../src/images/metamask.png";
 import store from "../../../src/images/store.png";
+import {useRouter} from "next/router";
 
 export default () => {
+  const router = useRouter();
   return(
     <div className="w-1/2 mx-auto text-blue-100">
       <h2 className="font-semibold my-5">Connect your wallet</h2>
       <p className="mb-3">Connect more than one account to experince full potential of this dapp.</p>
-      <Button variant="outlined" className="rounded-3xl bg-[#006dff] text-white">
+      <Button variant="outlined" className="rounded-3xl bg-[#006dff] text-white" onClick={() => router.push('/portfolio/dashboard')}>
         <Image src={metamask} className="mx-2" alt="metamask"/>
         Connect MetaMask
       </Button>

@@ -11,7 +11,7 @@ const TopBar = ({handleDrawerToggle}) => {
   
   return(
     <Toolbar className="bg-gray-900 flex justify-between">
-      <div>
+      <div className="flex items-center gap-5">
         <IconButton
           color="inherit"
           aria-label="open drawer"
@@ -24,6 +24,7 @@ const TopBar = ({handleDrawerToggle}) => {
         <Typography variant="h6" noWrap component="div">
           { selectedPage }
         </Typography>
+        <SelectButton data={selectCountry} name="account"/>
       </div>
       <SelectButton data={selectCountry} name="country" label="Select Country" />
     </Toolbar>

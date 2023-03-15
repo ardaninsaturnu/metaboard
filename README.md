@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+##### Mehmet Arda Çelik
 
-## Getting Started
+## metaboard
+### tokens viewer borad
 
-First, run the development server:
+This project creating for a case. This case aims clean code and good folder structure using with react.js, next.js, material ui, and tailwind.css
 
-```bash
-npm run dev
-# or
-yarn dev
+## Features
+
+- List all product on home page.
+- navigate for manage pages topBar and sidebar.
+- routing
+- Tokens list on portfolio
+- go each token page.
+
+## Tech
+
+used thoose techs for Metaboard :
+
+for client 
+
+- ReactJS
+- Next.js
+- Redux Toolkit
+- Material Ui
+- TailwindCss
+- next router
+
+
+## Installation
+
+Clone project your local
+
+```sh
+git clone git@github.com:ardaninsaturnu/booquery.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install the dependencies and devDependencies and start the npm.
 
-You can start editing the page by modifying `pages/SelectButton.js`. The page auto-updates as you edit the file.
+```sh
+npm install
+npm start
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## View
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+to view project last version click this
+url : <a target="_blank" href="https://booquery.vercel.app">for Antiquery follow this</a>
 
-## Learn More
+### Commits Explanation
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- :rainbow:  for style
+- :microbe:  for bug fixies
+- :dna:  for merging
+- :fairy:  for new features
+- :ocean: for cleaning

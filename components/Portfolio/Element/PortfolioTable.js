@@ -34,18 +34,39 @@ const columns = [
 
 const rows = [
   {
-    token: 'MANA',
-    description: 'Something will be good',
-    portfolio: '76.12',
-    price: '0.59',
-    balance: '68.02'
+    token: "MANA",
+    description: "Something will be good",
+    portfolio: "76.12",
+    price: "0.59",
+    balance: "68.02"
   },
   {
-    token: 'ETHERIUM',
-    description: 'Etherium',
-    portfolio: '76.12',
-    price: '1.682,02',
-    balance: '68.02'
+    token: "ETHERIUM",
+    description: "Etherium",
+    portfolio: "76.12",
+    price: "1682.02",
+    balance: "68.02"
+  },
+  {
+    token: "LINK",
+    description: "Chainlink",
+    portfolio: "125.32",
+    price: "28.34",
+    balance: "4.42"
+  },
+  {
+    token: "SOL",
+    description: "Solana",
+    portfolio: "92.56",
+    price: "213.98",
+    balance: "0.32"
+  },
+  {
+    token: "UNI",
+    description: "Uniswap",
+    portfolio: "56.76",
+    price: "18.23",
+    balance: "3.11"
   }
 ];
 
@@ -85,11 +106,14 @@ export default function PortfolioTable() {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => {
+            {rows.map((row,i,arr) => {
                 return (
                   <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
                     <TableCell>
-                      <div className="flex items-center gap-5" onClick={ () => router.push('/')}>
+                      <div className="flex items-center gap-5" onClick={ () => router.push({
+                        pathname: `/portfolio/${row.token}`,
+                        query: { ...row , id:row.token }
+                      })}>
                         <div className="h-[24px] w-[24px] bg-gray-900 rounded-3xl"></div>
                         <div>
                           <div>{row.token}</div>

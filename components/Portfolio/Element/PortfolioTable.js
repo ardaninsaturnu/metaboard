@@ -35,13 +35,14 @@ const columns = [
 const rows = [
   {
     token: "MANA",
+    shortCut: "MN",
     description: "Something will be good",
     portfolio: "76.12",
     price: "0.59",
     balance: "68.02"
   },
   {
-    token: "ETHERIUM",
+    token: "ETH",
     description: "Etherium",
     portfolio: "76.12",
     price: "1682.02",

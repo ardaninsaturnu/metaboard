@@ -14,11 +14,11 @@ const DrawerElement = () => {
   const dispatch = useDispatch();
   
   return ( <>
-    < div className={`${ lightMode ? 'secondary-light' : 'secondary-dark' } text-[#cfe8ff] h-screen`}>
-      < Toolbar/>
-        < List >
+    <div className={`${ lightMode ? 'secondary-light' : 'secondary-dark' } text-[#cfe8ff] h-screen`}>
+      <Toolbar/>
+        <List>
           {
-            sidebarLinks(selectedItem).map(({to, link, slug, icon}, index) => (
+            sidebarLinks(selectedItem).map(({ to, link, slug, icon }, index) => (
                 <ListItem
                   key={index}
                   disablePadding
@@ -44,7 +44,7 @@ const DrawerElement = () => {
           }
         </List>
         <Divider/>
-      <ThemeSwitch/>
+      <div className={`${ lightMode ? 'secondary-light' : 'secondary-dark' } flex items-end py-2`}><ThemeSwitch/></div>
     </div>
   </>)
 };

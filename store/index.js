@@ -4,19 +4,7 @@ const initialState = {
   selectedItem: "portfolio",
   selectedPage: "Portfolio",
   mobileOpen: false,
-  lightMode: false,
-  lightColor: {
-    text: '',
-    background: '',
-    secondary: '',
-    border: ''
-  },
-  darkColor: {
-    text: '',
-    background: '',
-    secondary: '',
-    border: ''
-  }
+  lightMode: false
 }
 
 const rootReducer = ( state = initialState, action ) => {

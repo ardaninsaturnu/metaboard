@@ -27,3 +27,19 @@
 .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input svg{
     fill: white;
 }
+
+.primary-light {
+    background-color: #a1a3f7;
+}
+
+.secondary-light {
+    background-color: #2f334b;
+}
+
+.primary-dark {
+    background-color: #101213ff;
+}
+
+.secondary-dark {
+    background-color: #1E1F25ff;
+}

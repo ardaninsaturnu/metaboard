@@ -9,10 +9,10 @@ import NetworkDropdown from "./NetworkDropdown";
 import SelectButton from "./SelectButton";
 
 const TopBar = ({handleDrawerToggle}) => {
-  const selectedPage = useSelector( state => state.selectedPage )
+  const { selectedPage,lightMode }= useSelector( state => state )
   
   return(
-    <Toolbar className="bg-[#101213ff] flex justify-between">
+    <Toolbar className={`${ lightMode ? 'primary-light' : 'primary-dark' } flex justify-between`}>
       <div className="flex items-center gap-5">
         <IconButton
           color="inherit"

@@ -27,12 +27,12 @@ const DrawerElement = () => {
                       page: link
                     }
                   } )}
-                  className={ selectedItem === slug ? 'border-r border-r-blue-300 border-r-8' : '' }>
+                  className={ selectedItem === slug ? 'border-r border-r-[#2644AAff]' : '' }>
                   <Link href={'#'} className="flex items-center p-3">
                     <ListItemIcon className="min-w-[28px]">
                       {icon}
                     </ListItemIcon>
-                    <p className={`text-sm ${ selectedItem === slug ? 'text-blue-100' : 'text-blue-300' }`}>
+                    <p className={`text-sm ${ selectedItem === slug ? 'text-white font-semibold' : 'text-[#717A89ff] font-medium' }`}>
                       {link}
                     </p>
                   </Link>

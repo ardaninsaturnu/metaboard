@@ -1,12 +1,12 @@
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Typography from "@mui/material/Typography";
-import SelectButton from "./SelectButton";
 import {selectCountry} from "../../../utility/constant";
 import Toolbar from "@mui/material/Toolbar";
 import {useSelector} from "react-redux";
 import MyAccountsDropdown from "../../MyAccountsDropdown";
 import NetworkDropdown from "../../NetworkDropdown";
+import SelectButton from "./SelectButton";
 
 const TopBar = ({handleDrawerToggle}) => {
   const selectedPage = useSelector( state => state.selectedPage )
@@ -29,7 +29,7 @@ const TopBar = ({handleDrawerToggle}) => {
         <MyAccountsDropdown/>
         <NetworkDropdown/>
       </div>
-      <SelectButton data={selectCountry} name="country" label="Select Country" />
+      <SelectButton data={selectCountry}/>
     </Toolbar>
   )
 }

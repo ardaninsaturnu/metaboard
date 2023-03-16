@@ -8,8 +8,9 @@ import {
 } from "@mui/icons-material";
 import Image from "next/image";
 import usa from "../src/images/usa.png";
+import tr from "../src/images/tr.png";
 
-const iconStyles = (slug, state) => `${ slug === state ? 'text-[#cfe8ff]' : 'text-orange' } w-[4px]`
+const iconStyles = (slug, state) => `${ slug === state ? 'text-[#2644AAff]' : 'text-[#717A89ff]'} w-[4px]`
 
 export const sidebarLinks = (state) => {
   return [
@@ -72,7 +73,7 @@ export const selectCountry = [
   {
     value: 3,
     text: 'TUR',
-    icon: <Image src={usa} alt="flag usa" style={{width:24}}/>
+    icon: <Image src={tr} alt="flag tr" style={{width:24}}/>
   }
 ]
 

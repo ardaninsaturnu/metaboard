@@ -1,31 +1,63 @@
-import { useState } from 'react';
-import Select from '@mui/material/Select';
-import MenuItem from '@mui/material/MenuItem';
+import { Fragment, useState } from 'react'
+import { Listbox, Transition } from '@headlessui/react'
+import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
+import {selectCountry} from "../../../utility/constant";
 
-const SelectButton = ({ data, name }) => {
-  const [selected, setSelected] = useState('1');
-  
-  const handleSelectChange = (event) => {
-    setSelected(event.target.value);
-  };
+export default function SelectButton( {data} ) {
+  const [selected, setSelected] = useState(selectCountry[0])
   
   return (
-    <div>
-      <Select
-        name={name}
-        value={selected}
-        onChange={handleSelectChange}
-        className="h-[40px] mt-1 flex w-full text-white rounded-3xl bg-none border border-sky-700 shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
-      >
-        {data.map((item) => (
-          <MenuItem key={item.value} value={item.value}>
-            <span className="mr-2">{item.icon}</span>
-            {item.text}
-          </MenuItem>
-        ))}
-      </Select>
+    <div className="w-32">
+      <Listbox value={selected} onChange={setSelected}>
+        <div className="relative mt-1">
+          <Listbox.Button className="relative border border-gray-300 w-full bg-transparent cursor-default rounded-3xl bg-white py-1 px-2 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+            <span className="block truncate text-white flex items-center gap-2">{ selected.icon && selected.icon} {selected.text}</span>
+            <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+              <ChevronUpDownIcon
+                className="h-5 w-5 text-gray-400"
+                aria-hidden="true"
+              />
+            </span>
+          </Listbox.Button>
+          <Transition
+            as={Fragment}
+            leave="transition ease-in duration-100"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              { data && data.map((item, index) => (
+                <Listbox.Option
+                  key={index}
+                  className={({ active }) =>
+                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
+                      active ? 'bg-amber-100 text-amber-900' : 'text-gray-900'
+                    }`
+                  }
+                  value={item}
+                >
+                  {({ selected }) => (
+                    <>
+                      <span
+                        className={`block truncate ${
+                          selected ? 'font-medium' : 'font-normal'
+                        }`}
+                      >
+                        { item.text }
+                      </span>
+                      {selected ? (
+                        <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-amber-600">
+                          <CheckIcon className="h-5 w-5" aria-hidden="true" />
+                        </span>
+                      ) : null}
+                    </>
+                  )}
+                </Listbox.Option>
+              ))}
+            </Listbox.Options>
+          </Transition>
+        </div>
+      </Listbox>
     </div>
-  );
-};
-
-export default SelectButton;
+  )
+}

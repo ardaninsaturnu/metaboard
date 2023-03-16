@@ -5,12 +5,13 @@ import SelectButton from "./SelectButton";
 import {selectCountry} from "../../../utility/constant";
 import Toolbar from "@mui/material/Toolbar";
 import {useSelector} from "react-redux";
+import MyAccountsDropdown from "../../MyAccountsDropdown";
 
 const TopBar = ({handleDrawerToggle}) => {
   const selectedPage = useSelector( state => state.selectedPage )
   
   return(
-    <Toolbar className="bg-gray-900 flex justify-between">
+    <Toolbar className="bg-[#101213ff] flex justify-between">
       <div className="flex items-center gap-5">
         <IconButton
           color="inherit"
@@ -24,7 +25,7 @@ const TopBar = ({handleDrawerToggle}) => {
         <Typography variant="h6" noWrap component="div">
           { selectedPage }
         </Typography>
-        <SelectButton data={selectCountry} name="account"/>
+        <MyAccountsDropdown/>
       </div>
       <SelectButton data={selectCountry} name="country" label="Select Country" />
     </Toolbar>

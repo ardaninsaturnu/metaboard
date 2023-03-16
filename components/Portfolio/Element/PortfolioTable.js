@@ -114,7 +114,7 @@ export default function PortfolioTable() {
                         pathname: `/portfolio/${row.token}`,
                         query: { ...row , id:row.token }
                       })}>
-                        <div className="h-[24px] w-[24px] bg-gray-900 rounded-3xl"></div>
+                        <div className="h-[24px] w-[24px] bg-[#101213ff] rounded-3xl"></div>
                         <div>
                           <div>{row.token}</div>
                           <div>{row.description}</div>

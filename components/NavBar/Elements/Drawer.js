@@ -12,7 +12,7 @@ const DrawerElement = () => {
   const dispatch = useDispatch();
   
   return ( <>
-    < div className="bg-gray-800 text-[#cfe8ff] h-screen">
+    < div className="bg-[#1E1F25ff] text-[#cfe8ff] h-screen">
       < Toolbar/>
         < List >
           {

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
-const SelectButton = ({ data, name, label }) => {
+const SelectButton = ({ data, name }) => {
   const [selected, setSelected] = useState('1');
   
   const handleSelectChange = (event) => {

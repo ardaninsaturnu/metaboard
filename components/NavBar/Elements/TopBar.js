@@ -6,6 +6,7 @@ import {selectCountry} from "../../../utility/constant";
 import Toolbar from "@mui/material/Toolbar";
 import {useSelector} from "react-redux";
 import MyAccountsDropdown from "../../MyAccountsDropdown";
+import NetworkDropdown from "../../NetworkDropdown";
 
 const TopBar = ({handleDrawerToggle}) => {
   const selectedPage = useSelector( state => state.selectedPage )
@@ -26,6 +27,7 @@ const TopBar = ({handleDrawerToggle}) => {
           { selectedPage }
         </Typography>
         <MyAccountsDropdown/>
+        <NetworkDropdown/>
       </div>
       <SelectButton data={selectCountry} name="country" label="Select Country" />
     </Toolbar>

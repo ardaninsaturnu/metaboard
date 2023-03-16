@@ -1,15 +1,52 @@
 import {EllipsisVerticalIcon} from "@heroicons/react/24/solid";
 import SelectButton from "../../NavBar/Elements/SelectButton";
 import TableTab from "./TableTab";
+import {useRouter} from "next/router";
 
-const people = [
-  { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
-  // More people...
-]
+const rows = [
+  {
+    token: "MANA",
+    shortCut: "MN",
+    description: "Something will be good",
+    portfolio: "76.12",
+    price: "0.59",
+    balance: "68.02"
+  },
+  {
+    token: "ETH",
+    description: "Etherium",
+    portfolio: "76.12",
+    price: "1682.02",
+    balance: "68.02"
+  },
+  {
+    token: "LINK",
+    description: "Chainlink",
+    portfolio: "125.32",
+    price: "28.34",
+    balance: "4.42"
+  },
+  {
+    token: "SOL",
+    description: "Solana",
+    portfolio: "92.56",
+    price: "213.98",
+    balance: "0.32"
+  },
+  {
+    token: "UNI",
+    description: "Uniswap",
+    portfolio: "56.76",
+    price: "18.23",
+    balance: "3.11"
+  }
+];
 
 export default function Table() {
+  const router = useRouter();
+  
   return (
-    <div className="bg-[#1E1F25ff] py-10">
+    <>
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex gap-3">
@@ -28,36 +65,39 @@ export default function Table() {
                 <thead>
                 <tr>
                   <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-white sm:pl-0">
-                    Name
+                    token
                   </th>
-                  <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-white">
-                    Title
+                  <th scope="col" className="py-3.5 px-3 text-center text-sm font-semibold text-white">
+                    portfolio
                   </th>
-                  <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-white">
-                    Email
+                  <th scope="col" className="py-3.5 px-3 text-center text-sm font-semibold text-white">
+                    price
                   </th>
-                  <th scope="col" className="py-3.5 px-3 text-left text-sm font-semibold text-white">
-                    Role
-                  </th>
-                  <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-0">
-                    <span className="sr-only">Edit</span>
+                  <th scope="col" className="py-3.5 px-3 text-center text-sm font-semibold text-white">
+                    balance
                   </th>
                 </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-800">
-                {people.map((person) => (
-                  <tr key={person.email}>
-                    <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-white sm:pl-0">
-                      {person.name}
+                { rows.map((row) => (
+                  <tr key={row.token}>
+                    <td>
+                      <div className="flex items-center gap-5 text-start cursor-pointer" onClick={ () => router.push({
+                        pathname: `/portfolio/${row.token}`,
+                        query: { ...row , id:row.token }
+                      })}>
+                        <div className="h-[24px] w-[24px] bg-[#101213ff] rounded-3xl"></div>
+                        <div>
+                          <div>{row.token}</div>
+                          <div>{row.description}</div>
+                        </div>
+                      </div>
                     </td>
-                    <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-300">{person.title}</td>
-                    <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-300">{person.email}</td>
-                    <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-300">{person.role}</td>
-                    <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                      <a href="#" className="text-indigo-400 hover:text-indigo-300">
-                        Edit<span className="sr-only">, {person.name}</span>
-                      </a>
-                    </td>
+                    <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-300"> {row.portfolio}</td>
+                    <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-300"> {row.price}
+                      <p>+ {row.portfolio}</p></td>
+                    <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-300"> {row.balance}
+                      <p>+ 45 {row.token}</p></td>
                   </tr>
                 ))}
                 </tbody>
@@ -66,6 +106,6 @@ export default function Table() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }

@@ -4,7 +4,7 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import {selectCountry} from "../../../utility/constant";
 
 export default function SelectButton( {data} ) {
-  const [selected, setSelected] = useState(selectCountry[0])
+  const [selected, setSelected] = useState(data[0])
   
   return (
     <div className="w-32">

@@ -6,6 +6,7 @@ import Link from "next/link";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
 import {useDispatch, useSelector} from 'react-redux';
+import ThemeSwitch from "../../ThemeSwitch";
 
 const DrawerElement = () => {
   const selectedItem = useSelector((state) => state.selectedItem);
@@ -42,6 +43,7 @@ const DrawerElement = () => {
           }
         </List>
         <Divider/>
+      <ThemeSwitch/>
     </div>
   </>)
 };

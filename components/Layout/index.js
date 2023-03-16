@@ -8,7 +8,7 @@ function Layout({children}) {
     <Box sx={{ display: 'flex' }} className="border-gray-800">
       <CssBaseline/>
       <NavBar/>
-      <div className="bg-[#101213ff] text-white h-screen mt-12 pt-8 pl-5 w-full text-center">
+      <div className="bg-orange-500 dark:bg-[#101213ff] text-white h-screen mt-12 pt-8 pl-5 w-full text-center">
         { children }
       </div>
     </Box>

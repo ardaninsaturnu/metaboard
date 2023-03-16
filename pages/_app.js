@@ -9,6 +9,7 @@ import createEmotionCache from '../src/createEmotionCache';
 import '../styles/globals.css';
 import {Provider} from "react-redux";
 import store from "../store";
+import ThemeSwitch from "../components/ThemeSwitch";
 
 // Client-side cache shared for the whole session
 // of the user in the browser.

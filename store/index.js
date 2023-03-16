@@ -3,7 +3,20 @@ import { configureStore } from "@reduxjs/toolkit";
 const initialState = {
   selectedItem: "portfolio",
   selectedPage: "Portfolio",
-  mobileOpen: false
+  mobileOpen: false,
+  lightMode: false,
+  lightColor: {
+    text: '',
+    background: '',
+    secondary: '',
+    border: ''
+  },
+  darkColor: {
+    text: '',
+    background: '',
+    secondary: '',
+    border: ''
+  }
 }
 
 const rootReducer = ( state = initialState, action ) => {
@@ -18,6 +31,11 @@ const rootReducer = ( state = initialState, action ) => {
       return {
         ...state,
         mobileOpen: !state.mobileOpen
+      };
+    case "TOGGLE_THEME":
+      return {
+        ...state,
+        lightMode: !state.lightMode
       };
     default:
       return state;

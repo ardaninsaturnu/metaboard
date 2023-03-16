@@ -1,5 +1,6 @@
 import Layout from "../../../components/Layout";
 import PortfolioTable from "../../../components/Portfolio/Element/PortfolioTable";
+import Table from "../../../components/Portfolio/Element/Table";
 
 const Dashboard = () => {
   return(
@@ -10,6 +11,7 @@ const Dashboard = () => {
           <p className="text-4xl font-bold">$100.00</p>
         </div>
         <div className="bg-gray-800 w-[95%] mx-auto mt-10 py-6 px-3 rounded-xl">
+          <Table/>
           <PortfolioTable/>
         </div>
       </Layout>

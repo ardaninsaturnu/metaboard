@@ -4,7 +4,7 @@ import LineChart from "../../components/Charts/LineChart";
 import TokenDetails from "../../components/Charts/Details";
 import HoldingItem from "../../components/Charts/Holdings";
 import {DocumentDuplicateIcon, StarIcon} from "@heroicons/react/24/outline";
-import {ChevronLeft, ChevronRight, Favorite} from "@mui/icons-material";
+import {ChevronLeft} from "@mui/icons-material";
 
 export default () => {
   const router = useRouter();
